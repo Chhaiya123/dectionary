@@ -67,7 +67,7 @@
                     <div class="card-body text-center">
                       <div>
                         <h2>Sign up</h2>
-                        <p>Welcome ...</p>
+                        <p>Welcome ... to test</p>
                         <a class="btn btn-lg btn-outline-light mt-3" href="{{route('register')}}">Register Now!</a>
                       </div>
                     </div>
