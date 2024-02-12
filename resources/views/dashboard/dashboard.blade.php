@@ -6,10 +6,14 @@
             <div class="card-body pb-0 d-flex justify-content-between align-items-start">
               <div>
                 <div class="fs-4 fw-semibold">
-                  @php
-                    $userCount = \App\Models\User::count();
-                  @endphp
-                  {{ $userCount }}
+                  @guest
+                    0
+                  @else
+                    @php
+                      $userCount = \App\Models\User::count();
+                    @endphp
+                    {{ $userCount }}
+                  @endguest
                   <span class="fs-6 fw-normal">
                   {{-- (-12.4%
                     <svg class="icon">
@@ -38,10 +42,15 @@
             <div class="card-body pb-0 d-flex justify-content-between align-items-start">
               <div>
                 <div class="fs-4 fw-semibold">
-                  @php
-                    $userCount = \App\Models\Word::count();
-                  @endphp
-                  {{ $userCount }} 
+                  @guest
+                    0
+                  @else
+                    @php
+                      $userCount = \App\Models\Word::count();
+                    @endphp
+                    {{ $userCount }} 
+                  @endguest
+                 
                   {{-- <span class="fs-6 fw-normal">(40.9%
                     <svg class="icon">
                       <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-arrow-top"></use>
