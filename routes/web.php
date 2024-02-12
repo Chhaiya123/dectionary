@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\UserLogin;
 use App\Http\Controllers\Word\WordController;
 use App\Http\Controllers\WordsController;
 use Illuminate\Support\Facades\Route;
@@ -20,20 +21,17 @@ use Illuminate\Support\Facades\Route;
 
 
 // Route::get('/', [UserController::class ,'index'])->name('index');
-// Route::get('/', function(){
-//     return view('dashboard.dashboard');
-// });
+Route::get('/', function(){
+    return view('dashboard.dashboard');
+});
 // Route::get('/', function(){
 //     return view('layout');
 // });
 // Route::get('/login', [UserController::class ,'login'])->name('login');
 // Route::get('/register', [UserController::class ,'register'])->name('register');
-
-
 // Route::get('/words/{id}', [WordController::class, 'update'])->name('word.update');
 // Route::get('/create', [WordController::class, 'create'])->name('create');
 // Route::post('/store', [WordController::class, 'store'])->name('word.store');
-
 
 Route::controller(LoginRegisterController::class)->group(function() {
     Route::get('/register', 'register')->name('register');

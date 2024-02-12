@@ -11,6 +11,10 @@ use Illuminate\Http\Request;
 
 class LoginRegisterController extends Controller
 {
+
+    // public function userlogin (){
+    //     view('login');
+    // }
     /**
      * Instantiate a new LoginRegisterController instance.
      */
@@ -102,6 +106,7 @@ class LoginRegisterController extends Controller
     {
         if(Auth::check())
         {
+           
             return view('dashboard.dashboard');
         }
         

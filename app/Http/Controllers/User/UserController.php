@@ -14,7 +14,6 @@ class UserController extends Controller
     public function index(){
         // $query = trim($request->input('query'));
         $data = User::paginate(10);
-        
         return view('page.user.user', compact('data'));
     }
     public function profile_view(){

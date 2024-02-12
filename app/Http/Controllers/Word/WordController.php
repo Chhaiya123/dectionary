@@ -8,23 +8,35 @@ use App\Models\Word;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Validation\Rules\Unique;
 use PhpOption\None;
 // use Illuminate\Validation\Rule;
 
 class WordController extends Controller
 {
     public function words(){
-        $data = Word::paginate(10);
+        $user_id = Auth::user()->id;
+        $data = Word::join('users', 'words.user_id', '=', 'users.id')
+        ->where('users.id', $user_id)
+        ->select('words.*')
+        ->paginate(10);
         return view('page.PageWords', compact('data'));
     }
     public function create(){
             return view('page.CreateWord');
     }
     public function store(Request $request){ 
+        
+        $user_id = Auth::user()->id;
+
         $rules = [
-            'word' => 'required|string|max:255|unique:words,word',
+            'word' => ['required','string','max:255',
+                Rule::unique('words')->where(function ($query) use ($user_id) {
+                    return $query->where('user_id', $user_id);
+                }),
+            ],
             'description' => 'required|max:255',
-            // validation rules
+            // other validation rules...
         ];
         $customMessages = [
             'word.required' => 'The word field is required.',
@@ -33,11 +45,13 @@ class WordController extends Controller
             // custom messages
         ];
         $request->validate($rules, $customMessages);
+           
         $data = new Word();
         $data->word= $request->word;
+        $data->user_id= $user_id;
         $data->description= $request->description;
         $data->save();
-        return redirect()->route('words');
+        return redirect()->route('words');        
     }
     public function edit($id){
         $data_up = Word::find($id);

@@ -12,7 +12,7 @@
                         @csrf
                         <h1>Login</h1>
                         <p class="text-medium-emphasis">Sign In to your account</p>
-                        {{-- @if ($errors->has('user_email'))
+                        @if ($errors->has('user_email'))
                           <div class="alert alert-danger fade show" role="alert">
                             {{ $errors->first('user_email') }}
                             <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -23,7 +23,7 @@
                               new bootstrap.Alert(alert);
                             });
                           </script>
-                        @endif --}}
+                        @endif
                         
                         <div class="input-group"><span class="input-group-text">
                             <svg class="icon">
@@ -41,15 +41,13 @@
                                 <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
                             </svg></span>
                             <input class="form-control" type="password" placeholder="Password" id="password" name="password" required>
-     
+    
                         </div>
                         <div class="mb-4">
                           @if ($errors->has('password'))
                             <span class="text-danger mb-3">{{ $errors->first('password') }}</span>
                           @endif
                         </div>
-                       
-                        
                         <div class="row">
                             <div class="col-6">
                             <button class="btn btn-primary px-4" type="submit">Login</button>
@@ -65,10 +63,10 @@
                 <div class="row h-100">
                   <div class="bg-color py-5">
                     <div class="card-body text-center">
-                      <div>
+                      <div title="Disabled Sign up">
                         <h2>Sign up</h2>
-                        <p>Welcome ... to test</p>
-                        <a class="btn btn-lg btn-outline-light mt-3" href="{{route('register')}}">Register Now!</a>
+                        <p>Welcome ...</p>
+                        <a class="btn btn-lg btn-outline-light mt-3 disabled"  href="{{route('register')}}">Register Now!</a>
                       </div>
                     </div>
                   </div>

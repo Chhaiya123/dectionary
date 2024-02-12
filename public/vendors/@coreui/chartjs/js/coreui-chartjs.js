@@ -30,6 +30,8 @@
       tooltipEl.classList.add(ClassName.TOOLTIP);
       const table = document.createElement('table');
       table.style.margin = '0px';
+      table.style.color = 'black';
+      table.style.fontSize = '12px';
       tooltipEl.appendChild(table);
       chart.canvas.parentNode.appendChild(tooltipEl);
     }
