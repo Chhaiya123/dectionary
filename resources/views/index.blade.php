@@ -52,7 +52,32 @@
         <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css" crossorigin="anonymous">
         {{-- <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@4.3.2/dist/css/coreui.min.css" rel="stylesheet" integrity="sha384-H8oVKJOQVGGCdfFNM+9gLKN0xagtq9oiNLirmijheEuqD3kItTbTvoOGgxVKqNiB" crossorigin="anonymous"> --}}
         {{-- <link href="vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet"> --}}
-        
+        <style>
+          .table-responsive::-webkit-scrollbar {
+            height: 8px;
+          }
+          /* Track */
+          .table-scroll::-webkit-scrollbar-track ,
+          .my-table::-webkit-scrollbar-track{
+            /* box-shadow: inset 0 0 5px grey;  */
+            border-radius: 10px;
+            background-color: #3620ff7a;
+          }
+          
+          /* Handle */
+          .table-scroll::-webkit-scrollbar-thumb ,
+          .my-table::-webkit-scrollbar-thumb {
+            background: #321fdb; 
+            border-radius: 10px;
+          }
+
+          /* Handle on hover */
+          .table-scroll::-webkit-scrollbar-thumb:hover ,
+          .my-table::-webkit-scrollbar-thumb:hover {
+            background: #dc3545; 
+          }
+
+        </style>
       </head>
       <body>
         @guest
