@@ -66,26 +66,21 @@ td .my-profile{
 .table-responsive {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  margin-bottom: 5px;
 }
-.table-responsive{
+/* .table-responsive{
   min-width: 200px!important;
   overflow: hidden!important;
   overflow-x: auto!important;
   margin-bottom: 5px!important;
   font-size: 14px!important;
-}
-.table-responsive .table{
+} */
+.table-responsive .table { 
   min-width: 500px;
-  white-space: nowrap;
-}
-.table-responsive .table {
+  font-size: 14px;
   vertical-align: middle;
-  min-width: 500px;
 }
 
-.table-responsive tbody td:nth-child(4) {
-  min-width: 100px;
-}
 .table-responsive tbody tr td:nth-child(5) {
   width: 120px;
 }
@@ -95,19 +90,16 @@ td .my-profile{
 .table-responsive tbody td:nth-child(4) .btn{
   font-size: 14px;
 }
-.table-responsive tbody td:nth-child(3){
+.table-responsive .table tbody  .description{
   display: -webkit-box;
   -webkit-Line-clamp: 1;
   -webkit-box-orient: vertical; 
   overflow: hidden;
   line-height: 35px;
-  
   }
-  .table > :not(caption) > * > * {
-    padding: 0.5rem 0.5rem;
-    background-color: var(--cui-table-bg);
-    border-bottom-width: 1px;
-    box-shadow: inset 0 0 0 9999px var(--cui-table-accent-bg);
+.table-responsive .table tbody  .name{
+  text-wrap: nowrap;
   }
+ 
 
 /* -End Own Custom- */
