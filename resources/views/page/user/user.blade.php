@@ -29,7 +29,7 @@
                     @endif --}}
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">NAME</th>
+                        <th class="name" scope="col">NAME</th>
                         <th scope="col">EMAIL</th>
                         <th scope="col">Profile</th>
                         <th scope="col">Action</th>
