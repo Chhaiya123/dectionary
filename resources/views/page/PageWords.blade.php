@@ -30,7 +30,7 @@
         </div>
         <div class="table-scroll">
             <div class="table-responsive">
-                <table class="table table-bordered mt-2" style="min-width: 800px;">
+                <table class="table table-bordered mt-2" style="min-width: 600px;">
                     <thead> 
                         <tr>
                             <th scope="col">#</th>
