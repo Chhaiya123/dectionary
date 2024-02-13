@@ -36,7 +36,6 @@
 }
 .table-responsive::-webkit-scrollbar {
   height: 8px;
-  
 }
 .avatar{
   overflow: hidden;
@@ -75,7 +74,7 @@ td .my-profile{
   margin-bottom: 5px!important;
   font-size: 14px!important;
 }
-.table-responsive .table { 
+.table-responsive table { 
   min-width: 800px!important;
   font-size: 14px;
   vertical-align: middle;
@@ -96,6 +95,7 @@ td .my-profile{
   -webkit-box-orient: vertical; 
   overflow: hidden;
   line-height: 35px;
+  color: gray;
   }
 .table-responsive .table .name{
   text-wrap: nowrap!important;
