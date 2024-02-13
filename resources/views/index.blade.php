@@ -41,6 +41,7 @@
         {{-- <link rel="stylesheet" href="css/vendors/simplebar.css"> --}}
         <!-- Main styles for this application-->
         {{Html::style('css/style.css')}}
+        {{Html::style('css/my-style.css')}}
         {{-- <link href="css/style.css" rel="stylesheet"> --}}
         <!-- We use those styles to show code examples, you should remove them in your application.-->
         {{Html::style('css/examples.css')}}
@@ -51,16 +52,7 @@
         <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css" crossorigin="anonymous">
         {{-- <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@4.3.2/dist/css/coreui.min.css" rel="stylesheet" integrity="sha384-H8oVKJOQVGGCdfFNM+9gLKN0xagtq9oiNLirmijheEuqD3kItTbTvoOGgxVKqNiB" crossorigin="anonymous"> --}}
         {{-- <link href="vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet"> --}}
-        <style>
-          .table-responsive table td.description{
-            display: -webkit-box!important;
-            -webkit-Line-clamp: 1!important;
-            -webkit-box-orient: vertical!important; 
-            overflow: hidden!important;
-            line-height: 35px!important;
-            color: gray!important;
-          }
-        </style>
+        
       </head>
       <body>
         @guest

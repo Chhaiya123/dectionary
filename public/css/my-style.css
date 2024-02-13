@@ -1,0 +1,7 @@
+.table-responsive table td.description{
+    display: -webkit-box!important;
+    -webkit-Line-clamp: 1!important;
+    -webkit-box-orient: vertical!important; 
+    overflow: hidden!important;
+    line-height: 35px!important;
+  }

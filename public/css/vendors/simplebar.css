@@ -95,7 +95,6 @@ td .my-profile{
   -webkit-box-orient: vertical!important; 
   overflow: hidden!important;
   line-height: 35px!important;
-  color: gray!important;
   }
 .table-responsive table .name{
   text-wrap: nowrap!important;
