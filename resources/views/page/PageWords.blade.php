@@ -65,6 +65,7 @@
             </div>
         </div>
         {{-- Edit form --}}
+        @foreach($data as $dt)
         <div class="modal fade" id="exampleModal{{$dt->word_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">  
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -72,8 +73,8 @@
                     <h5 class="modal-title" id="exampleModalLabel">Edit Form</h5>
                     <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body px-5">
-                        <form class="row needs-validation" action="{{url('wordupdate/'.$dt->word_id)}}" method="post" novalidate>
+                    <div class="modal-body px-1 px-md-2 px-lg-5">
+                        <form class="needs-validation" action="{{url('wordupdate/'.$dt->word_id)}}" method="post" novalidate>
                             @csrf
                             @method('put')
                             <div class="row g-3" >
@@ -102,6 +103,7 @@
                 </div>
             </div>
         </div>
+        @endforeach
         <div class="row">
             <div class="col">
                 <p>Showing {{ $data->firstItem() }} to {{ $data->lastItem() }} of {{ $data->total() }} results.</p>

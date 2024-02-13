@@ -44,42 +44,7 @@
                                 </div>
                             </td>
                         </tr>
-                        {{-- Edit form --}}
-                        <div class="modal fade" id="exampleModal{{$dt->word_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">  
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Edit Form</h5>
-                                    <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body px-5">
-                                        <form class="row needs-validation" action="{{url('wordupdate/'.$dt->word_id)}}" method="post" novalidate>
-                                            @csrf
-                                            @method('put')
-                                            <div class="row g-3" >
-                                                <div class="col-md-12">
-                                                    <label for="word" class="form-label">WORD</label>
-                                                    <input type="text" class="form-control" id="word" name="word" value="{{$dt->word}}" placeholder="Input word" required>
-                                                    
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <label for="des" class="form-label text-uppercase">Description</label>
-                                                    <textarea class="form-control" name="description" id="des" placeholder="Input description" required style="width: 100%; height: 200px;">{{$dt->description}}</textarea>
-                                                    
-                                                </div>
-                                                
-                                                <div class="col-12">
-                                                    <button class="btn btn-primary" type="submit">Submit form</button>
-                                                    <button class="btn text-light btn-danger" type="button">Cancel</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    
-                                    </div>
-                    
-                                </div>
-                            </div>
-                        </div>
+                        
                         @empty
                         <tr>
                             <td colspan="4"><h4 class="text-center">There are no word.</h4></td>
@@ -89,6 +54,44 @@
                 </table>
             </div>
         </div>
+        {{-- Edit form --}}
+        @foreach($results as $dt)
+        <div class="modal fade" id="exampleModal{{$dt->word_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">  
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Form</h5>
+                    <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body px-1 px-md-2 px-lg-5">
+                        <form class="needs-validation" action="{{url('wordupdate/'.$dt->word_id)}}" method="post" novalidate>
+                            @csrf
+                            @method('put')
+                            <div class="row g-3" >
+                                <div class="col-md-12">
+                                    <label for="word" class="form-label">WORD</label>
+                                    <input type="text" class="form-control" id="word" name="word" value="{{$dt->word}}" placeholder="Input word" required>
+                                    
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="des" class="form-label text-uppercase">Description</label>
+                                    <textarea class="form-control" name="description" id="des" placeholder="Input description" required style="width: 100%; height: 200px;">{{$dt->description}}</textarea>
+                                    
+                                </div>
+                                
+                                <div class="col-12">
+                                    <button class="btn btn-primary" type="submit">Submit form</button>
+                                    <button class="btn text-light btn-danger" type="button">Cancel</button>
+                                </div>
+                            </div>
+                        </form>
+                    
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+        @endforeach
         <div class="row">
             <div class="col">
                 {{-- @foreach($counts as $dataa) --}}

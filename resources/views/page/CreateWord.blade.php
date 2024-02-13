@@ -5,9 +5,9 @@
     
     @else --}}
         <div class="card p-3">
-            <div class="col-8 m-auto">
+            <div class="col-12 col-md-8 m-auto p-0">
                 <h3>Create Word</h3>
-                <form class="row needs-validation" action="{{route('word.store')}}" method="post" novalidate>
+                <form class="needs-validation" action="{{route('word.store')}}" method="post" novalidate>
                     @csrf
                     @method('post')
                     <div class="row g-3" >
