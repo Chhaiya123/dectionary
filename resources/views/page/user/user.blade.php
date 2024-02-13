@@ -15,7 +15,7 @@
                 </form>
             </div>
         </div>
-        <div class="my-table">
+        <div class="table-responsive">
             <table class="table table-bordered mt-2">
                 <thead> 
                     {{-- @if(Session::has('success'))

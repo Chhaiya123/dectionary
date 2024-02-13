@@ -34,7 +34,7 @@
 .table-scroll::-webkit-scrollbar {
   width: 8px;
 }
-.my-table::-webkit-scrollbar {
+.table-responsive::-webkit-scrollbar {
   height: 8px;
   
 }
@@ -63,37 +63,41 @@ td .my-profile{
   border: 2px solid pink;
   box-shadow: #26394dbe 0px 20px 30px -10px;
 }
-.my-table{
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.table-responsive{
   min-width: 200px!important;
   overflow: hidden!important;
   overflow-x: auto!important;
   margin-bottom: 5px!important;
   font-size: 14px!important;
 }
-.my-table .table{
+.table-responsive .table{
   min-width: 500px;
 }
-.my-table .table {
+.table-responsive .table {
   vertical-align: middle;
   min-width: 500px;
 }
 
-.my-table tbody td:nth-child(4) {
+.table-responsive tbody td:nth-child(4) {
   min-width: 100px;
 }
-.my-table tbody tr td:nth-child(5) {
+.table-responsive tbody tr td:nth-child(5) {
   width: 120px;
 }
-.my-table tbody tr td:nth-child(5) .btn{
+.table-responsive tbody tr td:nth-child(5) .btn{
   font-size: 14px;
 }
-.my-table tbody td:nth-child(2) {
+.table-responsive tbody td:nth-child(2) {
   white-space: nowrap;
 }
-.my-table tbody td:nth-child(4) .btn{
+.table-responsive tbody td:nth-child(4) .btn{
   font-size: 14px;
 }
-.my-table tbody td:nth-child(3){
+.table-responsive tbody td:nth-child(3){
   display: -webkit-box;
   -webkit-Line-clamp: 1;
   -webkit-box-orient: vertical; 
