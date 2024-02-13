@@ -68,13 +68,13 @@ td .my-profile{
   -webkit-overflow-scrolling: touch;
   margin-bottom: 5px;
 }
-/* .table-responsive{
+.table-responsive{
   min-width: 200px!important;
   overflow: hidden!important;
   overflow-x: auto!important;
   margin-bottom: 5px!important;
   font-size: 14px!important;
-} */
+}
 .table-responsive .table { 
   min-width: 800px!important;
   font-size: 14px;
