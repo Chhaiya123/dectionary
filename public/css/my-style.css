@@ -4,4 +4,28 @@
     -webkit-box-orient: vertical!important; 
     overflow: hidden!important;
     line-height: 35px!important;
+}
+
+.table-responsive::-webkit-scrollbar {
+    height: 8px;
   }
+/* Track */
+.table-scroll::-webkit-scrollbar-track ,
+.my-table::-webkit-scrollbar-track{
+  /* box-shadow: inset 0 0 5px grey;  */
+  border-radius: 10px;
+  background-color: #3620ff7a;
+}
+ 
+/* Handle */
+.table-scroll::-webkit-scrollbar-thumb ,
+.my-table::-webkit-scrollbar-thumb {
+  background: #321fdb; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.table-scroll::-webkit-scrollbar-thumb:hover ,
+.my-table::-webkit-scrollbar-thumb:hover {
+  background: #dc3545; 
+}
