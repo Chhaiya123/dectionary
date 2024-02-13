@@ -52,7 +52,7 @@
                         {{-- @if(Auth::check() == Auth::user()) --}}
                             <tr>
                                 <th scope="row">{{$dt->id}}</th>
-                                <td class="name">{{$dt->name}}</td>
+                                <td class="name text-nowrap">{{$dt->name}}</td>
                                 <td>{{$dt->email}}</td>
                                 <td style="width: 120px">
                                     <img class="my-profile" src="{{$dt->image ? '../../uploads/'.$dt->image : '../../assets/img/logo.jpg'}}" alt="">
