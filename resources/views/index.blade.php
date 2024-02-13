@@ -99,62 +99,65 @@
             <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
         </div>
         {{-- endsidebar --}}
-        <div class="wrapper d-flex flex-column min-vh-100 bg-light">
+        
+        <div class="wrapper d-flex flex-column min-vh-100 bg-light"> 
+          
           <header class="header header-sticky mb-4">
-            <div class="container-fluid">
-              <button class="header-toggler px-md-0 me-md-3" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
-                <svg class="icon icon-lg">
-                  <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
-                </svg>
-              </button>
-              <a class="header-brand me-auto d-md-none" href="{{route('dashboard')}}">
-                <h3 class="mt-1"> Dictionary</h3>
-                </a>
-              <ul class="header-nav d-none me-auto d-md-flex">
-                <li class="nav-item"><a class="nav-link" href="{{route('dashboard')}}">Dashboard</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{url('users')}}">Users</a></li>
-              </ul>
-              <ul class="header-nav ms-3"> 
-                {{-- <li class="nav-item"><a class="nav-link" href="#">
-                    <svg class="icon icon-lg">
-                      <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bell"></use>
-                    </svg></a>
-                
-                </li> --}}
-                <li class="nav-item dropdown text-center">
-                    <a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        <div class="avatar avatar-md"><img class="avatar-img my-profile" src="{{Auth::User()->image ? '../../uploads/'.Auth::User()->image : '../../assets/img/logo.jpg'}}" alt="Profile"></div>
-                        <br> 
-                        @guest
-                            No User
-                        @else
-                        <span class="s small text-capitalize">{{ Auth::user()->name }}</span>
-                            
-                        @endguest
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-end pt-0">
-                        <div class="dropdown-header bg-light py-2">
-                        <div class="fw-semibold">Settings</div>
-                        </div><a class="dropdown-item" href="{{url('profile')}}">
-                        <svg class="icon me-2">
-                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user"></use>
-                        </svg> Profile</a><a class="dropdown-item" href="#">
-                        <svg class="icon me-2">
-                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-settings"></use>
-                        </svg> Settings</a><a class="dropdown-item" href="#">
-                    <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();"
-                            ><svg class="icon me-2">
-                              <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
-                            </svg>Logout</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                            @csrf
-                        </form>
-                  </div>
-                </li>
-              </ul>
+           
+              <div class="container-fluid px-0 px-lg-3">
+                <button class="header-toggler px-md-0 me-md-3" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+                  <svg class="icon icon-lg">
+                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
+                  </svg>
+                </button>
+                <a class="header-brand me-auto d-md-none" href="{{route('dashboard')}}">
+                  <h3 class="mt-1"> Dictionary</h3>
+                  </a>
+                <ul class="header-nav d-none me-auto d-md-flex">
+                  <li class="nav-item"><a class="nav-link" href="{{route('dashboard')}}">Dashboard</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{{url('users')}}">Users</a></li>
+                </ul>
+                <ul class="header-nav ms-3"> 
+                  {{-- <li class="nav-item"><a class="nav-link" href="#">
+                      <svg class="icon icon-lg">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bell"></use>
+                      </svg></a>
+                  
+                  </li> --}}
+                  <li class="nav-item dropdown text-center">
+                      <a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                          <div class="avatar avatar-md"><img class="avatar-img my-profile" src="{{Auth::User()->image ? '../../uploads/'.Auth::User()->image : '../../assets/img/logo.jpg'}}" alt="Profile"></div>
+                          <br> 
+                          @guest
+                              No User
+                          @else
+                          <span class="s small text-capitalize">{{ Auth::user()->name }}</span>
+                              
+                          @endguest
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-end pt-0">
+                          <div class="dropdown-header bg-light py-2">
+                          <div class="fw-semibold">Settings</div>
+                          </div><a class="dropdown-item" href="{{url('profile')}}">
+                          <svg class="icon me-2">
+                              <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user"></use>
+                          </svg> Profile</a><a class="dropdown-item" href="#">
+                          <svg class="icon me-2">
+                              <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-settings"></use>
+                          </svg> Settings</a><a class="dropdown-item" href="#">
+                      <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="{{ route('logout') }}"
+                              onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();"
+                              ><svg class="icon me-2">
+                                <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
+                              </svg>Logout</a>
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                              @csrf
+                          </form>
+                    </div>
+                  </li>
+                </ul>
             </div>
             <div class="header-divider"></div>
             <div class="container-fluid">
@@ -168,14 +171,16 @@
             </div>
           </header>
           {{-- body --}}
-          <div class="body flex-grow-1 px-3">
+          <div class="body flex-grow-1 px-1 px-md-3">
             <div class="container-lg">
-                        @yield('contant')
-                    
+              <div class="row">
+                @yield('contant')
+              </div>
             </div>
           </div>
           {{-- endbody --}}
         </div>
+        
         @endguest
         <!-- CoreUI and necessary plugins-->
         {{Html::script('vendors/@coreui/coreui/js/coreui.bundle.min.js')}}

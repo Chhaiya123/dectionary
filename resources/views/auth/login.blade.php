@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <div class="card-group d-block d-md-flex row">
-              <div class="card col-md-7 p-4 mb-0">
+              <div class="card col-md-7 p-0 mb-0">
                 <div class="card-body">
                   <form method="POST" action="{{ route('authenticate') }}" class=" needs-validation" novalidate>
                         @csrf

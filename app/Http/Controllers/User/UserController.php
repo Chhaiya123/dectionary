@@ -13,15 +13,37 @@ class UserController extends Controller
 {
     public function index(){
         // $query = trim($request->input('query'));
-        $data = User::paginate(10);
-        return view('page.user.user', compact('data'));
+        if(!Auth::user()){
+            return redirect()->route('login')
+                ->withErrors([
+                'email' => 'Please login to access the dashboard.',
+            ])->onlyInput('email');
+        }
+        else{
+            $data = User::paginate(10);
+            return view('page.user.user', compact('data'));
+        }
+        // try{
+            
+        // }catch(\Exception $e){
+            
+        // }
     }
     public function profile_view(){
-        $data = Auth::user();
-        if($data->bio != null){
+        try{
+            $data = Auth::user();
+            if($data->bio != null){
+                return view('page.user.profile');
+            }
             return view('page.user.profile');
+
+        }catch(\Exception $e){
+            return redirect()->route('login')
+                ->withErrors([
+                'email' => 'Please login to access the dashboard.',
+            ])->onlyInput('email');
         }
-        return view('page.user.profile');
+        
     }
     public function upload(Request $request, $id){ 
         $request->validate([
@@ -52,15 +74,22 @@ class UserController extends Controller
     }
     public function search(Request $request)
     {
-        $query = trim($request->input('query_user'));
-        $results = User::where('name', 'LIKE', '%' . $query . '%')->get();
-        
-        // return response()->json($results);
-        if($query != null){
+        if(!Auth::user()){
+             return redirect()->route('login')
+                ->withErrors([
+                'email' => 'Please login to access the dashboard.',
+            ])->onlyInput('email');
+        }else{
+            $query = trim($request->input('query_user'));
+            $results = User::where('name', 'LIKE', '%' . $query . '%')->get();
+            
+            // return response()->json($results);
+            if($query != null){
             return view('page.user.serach_user', compact('results','query'));
+            }
+            return redirect()->back();
+           
         }
-        return redirect()->back();
-
-        dd($query);
+        
     }
 }

@@ -15,59 +15,62 @@
                 </form>
             </div>
         </div>
-        
-        <table class="table table-bordered mt-2">
-            <thead> 
-                {{-- @if(Session::has('success'))
-                <tr>
-                    <th colspan="4">
-                        <div class="alert alert-success">
-                            {{ Session::get('success') }}
-                        </div>
-                    </th>
-                </tr>
-                @endif --}}
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">NAME</th>
-                    <th scope="col">EMAIL</th>
-                    <th scope="col">Profile</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{-- @if($results as $dt) --}}
-                @forelse($data as $dt)
-                    {{-- @if(Auth::user() == Auth::user())
-                        <tr>
-                            <th scope="row">{{$dt->id}}</th>
-                            <td>{{$dt->name}}</td>
-                            <td>{{$dt->email}}</td>
-                            <td style="width: 120px"><img class="my-profile" src="{{$dt->image ? '../../uploads/'.$dt->image : '../../assets/img/logo.jpg'}}" alt=""></td>
-                            <td class="te text-end" style="width: 100px">
-                                <a href="" class="btn btn-danger text-light">Delete</a>
-                            </td>
-                        </tr>
+        <div class="my-table">
+            <table class="table table-bordered mt-2">
+                <thead> 
+                    {{-- @if(Session::has('success'))
+                    <tr>
+                        <th colspan="4">
+                            <div class="alert alert-success">
+                                {{ Session::get('success') }}
+                            </div>
+                        </th>
+                    </tr>
                     @endif --}}
-                    {{-- @if(Auth::check() == Auth::user()) --}}
-                        <tr>
-                            <th scope="row">{{$dt->id}}</th>
-                            <td>{{$dt->name}}</td>
-                            <td>{{$dt->email}}</td>
-                            <td style="width: 120px"><img class="my-profile" src="{{$dt->image ? '../../uploads/'.$dt->image : '../../assets/img/logo.jpg'}}" alt=""></td>
-                            <td class="te text-end" style="width: 100px">
-                                <a href="" class="btn btn-danger text-light ">Delete</a>
-                            </td>
-                        </tr>
-                    {{-- @endif --}}
-                @empty
-                <tr>
-                    <td colspan="4">There are no User.</td>
-                </tr>
-                @endforelse
-            </tbody>
-            
-        </table>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">NAME</th>
+                        <th scope="col">EMAIL</th>
+                        <th scope="col">Profile</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{-- @if($results as $dt) --}}
+                    @forelse($data as $dt)
+                        {{-- @if(Auth::user() == Auth::user())
+                            <tr>
+                                <th scope="row">{{$dt->id}}</th>
+                                <td>{{$dt->name}}</td>
+                                <td>{{$dt->email}}</td>
+                                <td style="width: 120px"><img class="my-profile" src="{{$dt->image ? '../../uploads/'.$dt->image : '../../assets/img/logo.jpg'}}" alt=""></td>
+                                <td class="te text-end" style="width: 100px">
+                                    <a href="" class="btn btn-danger text-light">Delete</a>
+                                </td>
+                            </tr>
+                        @endif --}}
+                        {{-- @if(Auth::check() == Auth::user()) --}}
+                            <tr>
+                                <th scope="row">{{$dt->id}}</th>
+                                <td>{{$dt->name}}</td>
+                                <td>{{$dt->email}}</td>
+                                <td style="width: 120px">
+                                    <img class="my-profile" src="{{$dt->image ? '../../uploads/'.$dt->image : '../../assets/img/logo.jpg'}}" alt="">
+                                </td>
+                                <td class="text-center">
+                                    <a href="" class="btn btn-danger text-light ">Delete</a>
+                                </td>
+                            </tr>
+                        {{-- @endif --}}
+                    @empty
+                    <tr>
+                        <td colspan="4">There are no User.</td>
+                    </tr>
+                    @endforelse
+                </tbody>
+                
+            </table>
+        </div>
         <div class="row">
             <div class="col">
                 <p>Showing {{ $data->firstItem() }} to {{ $data->lastItem() }} of {{ $data->total() }} results.</p>

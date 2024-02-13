@@ -15,12 +15,22 @@ use PhpOption\None;
 class WordController extends Controller
 {
     public function words(){
-        $user_id = Auth::user()->id;
-        $data = Word::join('users', 'words.user_id', '=', 'users.id')
-        ->where('users.id', $user_id)
-        ->select('words.*')
-        ->paginate(10);
-        return view('page.PageWords', compact('data'));
+        try {
+            $user_id = Auth::user()->id;
+            $data = Word::join('users', 'words.user_id', '=', 'users.id')
+            ->where('users.id', $user_id)
+            ->select('words.*')
+            ->paginate(10);
+            return view('page.PageWords', compact('data'));
+
+
+        } catch (\Exception $e) {
+            return redirect()->route('login')
+                ->withErrors([
+                'email' => 'Please login to access the dashboard.',
+                ])->onlyInput('email');
+        }
+        
     }
     public function create(){
             return view('page.CreateWord');
@@ -102,12 +112,22 @@ class WordController extends Controller
     }
     public function search(Request $request)
     {
-        $query = trim($request->input('query'));
-        $results = Word::where('word', 'LIKE', '%' . $query . '%')->get();    
-        // return response()->json($results);
-        if($query != null){
-            return view('page.search', compact('results','query'));
+        if(!Auth::user()){
+            return redirect()->route('login')
+                ->withErrors([
+                'email' => 'Please login to access the dashboard.',
+                ])->onlyInput('email');
+
+        }else{
+            $query = trim($request->input('query'));
+            $results = Word::where('word', 'LIKE', '%' . $query . '%')->get();    
+            $counts = Word::count();    
+            // return response()->json($results);
+            if($query != null){
+                return view('page.search', compact('results','query','counts'));
+            }
+            return redirect()->route('words');
         }
-        return redirect()->route('words');
+        
     }
 }
