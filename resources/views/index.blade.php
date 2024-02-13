@@ -35,7 +35,7 @@
         <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
         <!-- Vendors styles-->
-        {{Html::style('vendors/simplebar/css/simplebar.css')}}
+        {{-- {{Html::style('vendors/simplebar/css/simplebar.css')}} --}}
         {{-- <link rel="stylesheet" href="vendors/simplebar/css/simplebar.css"> --}}
         {{Html::style('css/vendors/simplebar.css')}}
         {{-- <link rel="stylesheet" href="css/vendors/simplebar.css"> --}}
