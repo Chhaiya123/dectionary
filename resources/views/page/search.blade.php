@@ -34,8 +34,8 @@
                         @forelse($results as $dt)
                         <tr>
                             <th width="50px" scope="row">{{$dt->word_id}}</th>
-                            <td>{{$dt->word}}</td>
-                            <td>{{$dt->description}}</td>
+                            <td class="text-nowrap">{{$dt->word}}</td>
+                            <td class="description">{{$dt->description}}</td>
                             <td>
                                 <div  class="d-flex gap-1 justify-content-end">
                                     <button type="button" class="btn btn-primary" data-coreui-toggle="modal" data-coreui-target="#exampleModal{{$dt->word_id}}">Edit</button>
@@ -93,8 +93,6 @@
             <div class="col">
                 {{-- @foreach($counts as $dataa) --}}
                     <p>Showing {{$counts}} results.</p>
-                    
-                   
                 {{-- @endforeach --}}
                 
             </div>

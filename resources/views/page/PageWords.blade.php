@@ -44,7 +44,7 @@
                     @forelse($data as $dt)
                         <tr>
                             <th width="50px" scope="row">{{$dt->word_id}}</th>
-                            <td>{{$dt->word}}</td>
+                            <td class="text-nowrap">{{$dt->word}}</td>
                             <td class="description">{{$dt->description}}</td>
                             <td>
                                 <div  class="d-flex gap-1 justify-content-end">

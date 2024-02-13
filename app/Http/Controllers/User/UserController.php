@@ -82,10 +82,10 @@ class UserController extends Controller
         }else{
             $query = trim($request->input('query_user'));
             $results = User::where('name', 'LIKE', '%' . $query . '%')->get();
-            
+            $counts = User::count();   
             // return response()->json($results);
             if($query != null){
-            return view('page.user.serach_user', compact('results','query'));
+            return view('page.user.serach_user', compact('results','query','counts'));
             }
             return redirect()->back();
            

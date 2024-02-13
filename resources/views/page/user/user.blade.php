@@ -38,18 +38,6 @@
                 <tbody>
                     {{-- @if($results as $dt) --}}
                     @forelse($data as $dt)
-                        {{-- @if(Auth::user() == Auth::user())
-                            <tr>
-                                <th scope="row">{{$dt->id}}</th>
-                                <td>{{$dt->name}}</td>
-                                <td>{{$dt->email}}</td>
-                                <td style="width: 120px"><img class="my-profile" src="{{$dt->image ? '../../uploads/'.$dt->image : '../../assets/img/logo.jpg'}}" alt=""></td>
-                                <td class="te text-end" style="width: 100px">
-                                    <a href="" class="btn btn-danger text-light">Delete</a>
-                                </td>
-                            </tr>
-                        @endif --}}
-                        {{-- @if(Auth::check() == Auth::user()) --}}
                             <tr>
                                 <th scope="row">{{$dt->id}}</th>
                                 <td class="name text-nowrap">{{$dt->name}}</td>

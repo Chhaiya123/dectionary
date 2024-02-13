@@ -20,8 +20,9 @@
                 <table class="table table-bordered mt-2">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
+                            <th scope="col">ID</th>
+                            <th class="name" scope="col">NAME</th>
+                            <th scope="col">EMAIL</th>
                             <th scope="col">Profile</th>
                             <th scope="col">Action</th>
                         </tr>
@@ -30,14 +31,13 @@
                         @forelse($results as $dt)
                         <tr>
                             <th scope="row">{{$dt->id}}</th>
-                            <td>{{$dt->name}}</td>
-                            <td>{{$dt->image}}</td>
-                            <td width="220px">
-                                <div  class="d-flex gap-1 justify-content-end">
-                                    <button type="button" class="btn btn-primary" data-coreui-toggle="modal" data-coreui-target="#exampleModal{{$dt->word_id}}">Edit</button>
-                                    
-                                    <a href="" class="btn btn-danger text-light">Delete</a>
-                                </div>
+                            <td class="name text-nowrap">{{$dt->name}}</td>
+                            <td>{{$dt->email}}</td>
+                            <td style="width: 120px">
+                                <img class="my-profile" src="{{$dt->image ? '../../uploads/'.$dt->image : '../../assets/img/logo.jpg'}}" alt="">
+                            </td>
+                            <td class="text-center">
+                                <a href="" class="btn btn-danger text-light ">Delete</a>
                             </td>
                         </tr>
                         @empty
@@ -47,6 +47,14 @@
                         @endforelse
                     </tbody>
                 </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{-- @foreach($counts as $dataa) --}}
+                    <p>Showing {{$counts}} results.</p>
+                {{-- @endforeach --}}
+                
             </div>
         </div>
     </div>
