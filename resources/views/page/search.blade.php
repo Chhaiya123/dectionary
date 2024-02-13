@@ -20,7 +20,7 @@
         
         <div class="table-scroll">
             <div class="table-responsive">
-                <table class="table table-bordered mt-2">
+                <table class="table table-bordered mt-2" style="min-width: 600px;">
                     <thead>
                         
                         <tr>
@@ -81,7 +81,7 @@
                                 
                                 <div class="col-12">
                                     <button class="btn btn-primary" type="submit">Submit form</button>
-                                    <button class="btn text-light btn-danger" type="button">Cancel</button>
+                                    <button class="btn text-light btn-danger" type="button" data-coreui-dismiss="modal" aria-label="Close">Cancel</button>
                                 </div>
                             </div>
                         </form>

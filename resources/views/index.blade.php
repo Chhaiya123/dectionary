@@ -53,6 +53,9 @@
         {{-- <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@4.3.2/dist/css/coreui.min.css" rel="stylesheet" integrity="sha384-H8oVKJOQVGGCdfFNM+9gLKN0xagtq9oiNLirmijheEuqD3kItTbTvoOGgxVKqNiB" crossorigin="anonymous"> --}}
         {{-- <link href="vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet"> --}}
         <style>
+          .table-responsive .table tbody{
+            vertical-align: middle;
+          }
           .table-responsive::-webkit-scrollbar {
             height: 8px;
           }
