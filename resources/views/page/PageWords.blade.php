@@ -28,78 +28,79 @@
                 <a class="btn btn-primary" href="{{route('create')}}">Create</a>
             
         </div>
-        
-        <div class="table-responsive">
-            <table class="table table-bordered mt-2">
-                <thead> 
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Words</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{-- @if($results as $dt) --}}
-                    @forelse($data as $dt)
+        <div class="table-scroll">
+            <div class="table-responsive">
+                <table class="table table-bordered mt-2">
+                    <thead> 
                         <tr>
-                            <th width="50px" scope="row">{{$dt->word_id}}</th>
-                            <td class="text-nowrap">{{$dt->word}}</td>
-                            <td class="description">{{$dt->description}}</td>
-                            <td>
-                                <div  class="d-flex gap-1 justify-content-end">
-                                    <button type="button" class="btn btn-primary" data-coreui-toggle="modal" data-coreui-target="#exampleModal{{$dt->word_id}}">Edit</button>
-                                    {{-- <a href="{{ url('edit/'.$dt->word_id) }}" class="btn btn-primary">Edit</button> --}}
-                                    <a href="{{url('delete/'.$dt->word_id)}}" class="btn btn-danger text-light">Delete</a>
-                                </div>
-                            </td>
+                            <th scope="col">#</th>
+                            <th scope="col">Words</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Action</th>
                         </tr>
-                        {{-- Edit form --}}
-                        <div class="modal fade" id="exampleModal{{$dt->word_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">  
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Edit Form</h5>
-                                    <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
+                    </thead>
+                    <tbody>
+                        {{-- @if($results as $dt) --}}
+                        @forelse($data as $dt)
+                            <tr>
+                                <th width="50px" scope="row">{{$dt->word_id}}</th>
+                                <td class="text-nowrap">{{$dt->word}}</td>
+                                <td class="description">{{$dt->description}}</td>
+                                <td>
+                                    <div  class="d-flex gap-1 justify-content-end">
+                                        <button type="button" class="btn btn-primary" data-coreui-toggle="modal" data-coreui-target="#exampleModal{{$dt->word_id}}">Edit</button>
+                                        {{-- <a href="{{ url('edit/'.$dt->word_id) }}" class="btn btn-primary">Edit</button> --}}
+                                        <a href="{{url('delete/'.$dt->word_id)}}" class="btn btn-danger text-light">Delete</a>
                                     </div>
-                                    <div class="modal-body px-5">
-                                        <form class="row needs-validation" action="{{url('wordupdate/'.$dt->word_id)}}" method="post" novalidate>
-                                            @csrf
-                                            @method('put')
-                                            <div class="row g-3" >
-                                                <div class="col-md-12">
-                                                    <label for="word" class="form-label">WORD</label>
-                                                    <input type="text" class="form-control" id="word" name="word" value="{{$dt->word}}" placeholder="Input word" required>
-                                                    @foreach($errors->get('word') as $error)
-                                                        <small class="text-danger">{{ $error }}</small>
-                                                    @endforeach
+                                </td>
+                            </tr>
+                            {{-- Edit form --}}
+                            <div class="modal fade" id="exampleModal{{$dt->word_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">  
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Edit Form</h5>
+                                        <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body px-5">
+                                            <form class="row needs-validation" action="{{url('wordupdate/'.$dt->word_id)}}" method="post" novalidate>
+                                                @csrf
+                                                @method('put')
+                                                <div class="row g-3" >
+                                                    <div class="col-md-12">
+                                                        <label for="word" class="form-label">WORD</label>
+                                                        <input type="text" class="form-control" id="word" name="word" value="{{$dt->word}}" placeholder="Input word" required>
+                                                        @foreach($errors->get('word') as $error)
+                                                            <small class="text-danger">{{ $error }}</small>
+                                                        @endforeach
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <label for="des" class="form-label text-uppercase">Description</label>
+                                                        <textarea class="form-control" name="description" id="des" placeholder="Input description" required style="width: 100%; height: 200px;">{{$dt->description}}</textarea>
+                                                        @foreach($errors->get('description') as $error)
+                                                            <small class="text-danger">{{ $error }}</small>
+                                                        @endforeach
+                                                    </div>
+                                                    
+                                                    <div class="col-12">
+                                                        <button class="btn btn-primary" type="submit">Submit form</button>
+                                                        <button class="btn text-light btn-danger" type="button" data-coreui-dismiss="modal" aria-label="Close">Cancel</button>
+                                                    </div>
                                                 </div>
-                                                <div class="col-md-12">
-                                                    <label for="des" class="form-label text-uppercase">Description</label>
-                                                    <textarea class="form-control" name="description" id="des" placeholder="Input description" required style="width: 100%; height: 200px;">{{$dt->description}}</textarea>
-                                                    @foreach($errors->get('description') as $error)
-                                                        <small class="text-danger">{{ $error }}</small>
-                                                    @endforeach
-                                                </div>
-                                                
-                                                <div class="col-12">
-                                                    <button class="btn btn-primary" type="submit">Submit form</button>
-                                                    <button class="btn text-light btn-danger" type="button" data-coreui-dismiss="modal" aria-label="Close">Cancel</button>
-                                                </div>
-                                            </div>
-                                        </form>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @empty
-                    <tr>
-                        <td colspan="4"><h4 class="text-center">There are no word.</h4></td>
-                    </tr>
-                    @endforelse
-                </tbody>
-                
-            </table>
+                        @empty
+                        <tr>
+                            <td colspan="4"><h4 class="text-center">There are no word.</h4></td>
+                        </tr>
+                        @endforelse
+                    </tbody>
+                    
+                </table>
+            </div>
         </div>
         <div class="row">
             <div class="col">
