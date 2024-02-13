@@ -41,7 +41,7 @@
         {{-- <link rel="stylesheet" href="css/vendors/simplebar.css"> --}}
         <!-- Main styles for this application-->
         {{Html::style('css/style.css')}}
-        {{-- <link href="css/style.css" rel="stylesheet"> --}}
+        <link href="css/style.css" rel="stylesheet">
         <!-- We use those styles to show code examples, you should remove them in your application.-->
         {{Html::style('css/examples.css')}}
         {{-- <link href="css/examples.css" rel="stylesheet"> --}}
