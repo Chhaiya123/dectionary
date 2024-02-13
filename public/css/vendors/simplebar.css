@@ -90,7 +90,7 @@ td .my-profile{
 .table-responsive tbody td:nth-child(4) .btn{
   font-size: 14px;
 }
-.table-responsive .table .description{
+.table-responsive .table td.description{
   display: -webkit-box;
   -webkit-Line-clamp: 1;
   -webkit-box-orient: vertical; 
