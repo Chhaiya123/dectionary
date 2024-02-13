@@ -47,7 +47,7 @@ class UserController extends Controller
     }
     public function upload(Request $request, $id){ 
         $request->validate([
-            'image' => 'required|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'required|mimes:jpeg,png,jpg,gif|max:3048',
         ]);
         $imageName = Auth::User()->image;
         $data_update = User::find($id);
@@ -57,8 +57,10 @@ class UserController extends Controller
         $data_update->image = $request->image;
         
         $file = $request->file('image');
-        $extenstion = $file->getClientOriginalExtension();
+       
+        $extenstion = $file->getClientOriginalExtension();  
         $filename = time().'.'.$extenstion;
+      
         $file->move('uploads', $filename);
         $data_update->image = $filename;
 

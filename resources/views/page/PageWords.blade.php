@@ -106,7 +106,7 @@
         @endforeach
         <div class="row">
             <div class="col">
-                <p>Showing {{ $data->firstItem() }} to {{ $data->lastItem() }} of {{ $data->total() }} results.</p>
+                <p class="small">Showing {{ $data->firstItem() }} to {{ $data->lastItem() }} of {{ $data->total() }} results.</p>
             </div>
             <div class="col">
                 <nav class="d-flex justify-content-end">

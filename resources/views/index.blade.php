@@ -155,8 +155,10 @@
                   
                   </li> --}}
                   <li class="nav-item dropdown text-center">
-                      <a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                          <div class="avatar avatar-md"><img class="avatar-img my-profile" src="{{Auth::User()->image ? '../../uploads/'.Auth::User()->image : '../../assets/img/logo.jpg'}}" alt="Profile"></div>
+                      <a class="nav-link py-0" style="outline: none;" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                          <div class="avatar avatar-md">
+                            <img class="avatar-img my-profile" src="{{Auth::User()->image ? '../../uploads/'.Auth::User()->image : '../../assets/img/logo.jpg'}}" alt="Profile"> 
+                          </div>
                           <br> 
                           @guest
                               No User

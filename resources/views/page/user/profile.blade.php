@@ -3,13 +3,12 @@
 
 <div class="container">
    
-      
     @if($errors->any())
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         @foreach($errors->all() as $error)
-            រូបភាពត្រូវមានទំហំតូចជាង 2MB 
+            រូបភាពត្រូវមានទំហំតូចជាង 3MB
         @endforeach
-         <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close"></button>
     </div>
     
     @endif
@@ -31,7 +30,7 @@
 </div>
  
   
-  <!-- Modal -->
+  <!-- Modal Edit-->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -65,8 +64,9 @@
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label">Profile image</label>
-                    <input type="file" name="image" class="form-control" aria-label="file example" required  accept="image/png, image/gif, image/jpeg">
+                    <input type="file" name="image" class="form-control" aria-label="file example" title="{{Auth::User()->image ? '../../uploads/'.Auth::User()->image : '../../assets/img/logo.jpg'}}"   accept="image/png, image/gif, image/jpeg">
                     <div class="invalid-feedback">Example invalid form file feedback</div>
+                    <img src="{{Auth::User()->image ? '../../uploads/'.Auth::User()->image : '../../assets/img/logo.jpg'}}" style="width: 40px; height: 40px;" alt="">
                 </div>
                 {{-- @if(session('success'))
                     <div class="alert alert-success">
