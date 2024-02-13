@@ -19,7 +19,7 @@
         </div>
         
         <div class="table-scroll">
-            <div class="my-table">
+            <div class="table-responsive">
                 <table class="table table-bordered mt-2">
                     <thead>
                         

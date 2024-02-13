@@ -76,6 +76,7 @@ td .my-profile{
 }
 .table-responsive .table{
   min-width: 500px;
+  white-space: nowrap;
 }
 .table-responsive .table {
   vertical-align: middle;
