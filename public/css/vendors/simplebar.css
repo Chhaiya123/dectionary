@@ -92,10 +92,6 @@ td .my-profile{
 .table-responsive tbody tr td:nth-child(5) .btn{
   font-size: 14px;
 }
-.table-responsive tbody td{
-  white-space: nowrap;
-  text-wrap: nowrap;
-}
 .table-responsive tbody td:nth-child(4) .btn{
   font-size: 14px;
 }

@@ -2028,6 +2028,7 @@ html:not([dir=rtl]) .offset-11 {
   background-color: var(--cui-table-bg);
   border-bottom-width: 1px;
   box-shadow: inset 0 0 0 9999px var(--cui-table-accent-bg);
+  text-wrap: nowrap;
 }
 .table > tbody {
   vertical-align: inherit;
