@@ -153,11 +153,11 @@ td .my-profile{
   box-shadow: #26394dbe 0px 20px 30px -10px;
 }
 .my-table{
-  min-width: 200px;
-  overflow: hidden;
-  overflow-x: auto;
-  margin-bottom: 5px;
-  font-size: 14px;
+  min-width: 200px!important;
+  overflow: hidden!important;
+  overflow-x: auto!important;
+  margin-bottom: 5px!important;
+  font-size: 14px!important;
 }
 .my-table .table{
   min-width: 500px;
