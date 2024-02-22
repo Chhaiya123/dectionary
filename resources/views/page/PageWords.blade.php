@@ -34,8 +34,12 @@
                     <thead> 
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Words</th>
-                            <th scope="col">Description</th>
+                            <th scope="col">Words <span class="text-primary">French</span></th>
+                            <th scope="col">Description <span class="text-primary">French</span></th>
+                            <th scope="col">Words <span class="text-danger">Khmer</span></th>
+                            <th scope="col">Description <span class="text-danger">Khmer</span></th>
+                            <th scope="col">Words <span class="text-success">English</span></th>
+                            <th scope="col">Description <span class="text-success">English</span></th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -46,6 +50,10 @@
                                 <th width="50px" scope="row">{{$dt->word_id}}</th>
                                 <td class="text-nowrap">{{$dt->word}}</td>
                                 <td class="description">{{$dt->description}}</td>
+                                <td class="text-nowrap">{{$dt->word_km}}</td>
+                                <td class="description">{{$dt->description_km}}</td>
+                                <td class="text-nowrap">{{$dt->word_en}}</td>
+                                <td class="description">{{$dt->description_en}}</td>
                                 <td>
                                     <div  class="d-flex gap-1 justify-content-end">
                                         <button type="button" class="btn btn-primary" data-coreui-toggle="modal" data-coreui-target="#exampleModal{{$dt->word_id}}">Edit</button>
@@ -56,7 +64,7 @@
                             </tr>
                         @empty
                         <tr>
-                            <td colspan="4"><h4 class="text-center">There are no word.</h4></td>
+                            <td colspan="8"><h4 class="text-center">There are no word.</h4></td>
                         </tr>
                         @endforelse
                     </tbody>
@@ -78,16 +86,50 @@
                             @csrf
                             @method('put')
                             <div class="row g-3" >
-                                <div class="col-md-12">
-                                    <label for="word" class="form-label">WORD</label>
+                                {{-- input French --}}
+                                <div class="col-md-12 col-lg-4">
+                                    <label for="word" class="form-label">WORD <span class="text-light badge rounded-pill bg-primary">French</span></label>
                                     <input type="text" class="form-control" id="word" name="word" value="{{$dt->word}}" placeholder="Input word" required>
                                     @foreach($errors->get('word') as $error)
                                         <small class="text-danger">{{ $error }}</small>
                                     @endforeach
                                 </div>
+                                {{-- input Khmer --}}
+                                <div class="col-md-12 col-lg-4">
+                                    <label for="word_km" class="form-label">WORD <span class="text-light badge rounded-pill bg-danger">Khmer</span></label>
+                                    <input type="text" class="form-control" id="word_km" name="word_km" value="{{$dt->word_km}}" placeholder="Input word khmer" required>
+                                    @foreach($errors->get('word') as $error)
+                                        <small class="text-danger">{{ $error }}</small>
+                                    @endforeach
+                                </div>
+                                {{-- input Khmer --}}
+                                <div class="col-md-12 col-lg-4">
+                                    <label for="word_en" class="form-label">WORD <span class="text-light badge rounded-pill bg-success">English</span></label>
+                                    <input type="text" class="form-control" id="word_en" name="word_en" value="{{$dt->word_en}}" placeholder="Input word english" required>
+                                    @foreach($errors->get('word') as $error)
+                                        <small class="text-danger">{{ $error }}</small>
+                                    @endforeach
+                                </div>
+                                {{-- description french --}}
                                 <div class="col-md-12">
-                                    <label for="des" class="form-label text-uppercase">Description</label>
-                                    <textarea class="form-control" name="description" id="des" placeholder="Input description" required style="width: 100%; height: 200px;">{{$dt->description}}</textarea>
+                                    <label for="des" class="form-label text-uppercase">Description <span class="text-light badge rounded-pill bg-primary">French</span></label>
+                                    <textarea class="form-control" name="description" id="des" placeholder="Input description" required style="width: 100%; height: 100px;">{{$dt->description}}</textarea>
+                                    @foreach($errors->get('description') as $error)
+                                        <small class="text-danger">{{ $error }}</small>
+                                    @endforeach
+                                </div>
+                                {{-- description Khmer --}}
+                                <div class="col-md-12">
+                                    <label for="des_km" class="form-label text-uppercase">Description <span class="text-light badge rounded-pill bg-danger">Khmer</span></label>
+                                    <textarea class="form-control" name="description_km" id="des_km" placeholder="Input description khmer" required style="width: 100%; height: 100px;">{{$dt->description_km}}</textarea>
+                                    @foreach($errors->get('description') as $error)
+                                        <small class="text-danger">{{ $error }}</small>
+                                    @endforeach
+                                </div>
+                                {{-- description English --}}
+                                <div class="col-md-12">
+                                    <label for="des_en" class="form-label text-uppercase">Description <span class="text-light badge rounded-pill bg-success">English</span></label>
+                                    <textarea class="form-control" name="description_en" id="des_en" placeholder="Input description english" required style="width: 100%; height: 100px;">{{$dt->description_en}}</textarea>
                                     @foreach($errors->get('description') as $error)
                                         <small class="text-danger">{{ $error }}</small>
                                     @endforeach

@@ -11,8 +11,12 @@ class Word extends Model
     protected $table = "words";
     protected $fillable = [
         'word',
+        'word_km',
+        'word_en',
         'user_id',
         'description',
+        'description_km',
+        'description_en',
     ];
     protected $primaryKey = 'word_id';
 }

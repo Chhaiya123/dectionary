@@ -75,7 +75,7 @@ td .my-profile{
   font-size: 14px!important;
 }
 .table-responsive table { 
-  min-width: 800px!important;
+  min-width: 1000px!important;
   font-size: 14px;
   vertical-align: middle;
 }
@@ -90,6 +90,7 @@ td .my-profile{
   font-size: 14px;
 }
 .table-responsive table td.description{
+  width: 100%!important;
   display: -webkit-box!important;
   -webkit-Line-clamp: 1!important;
   -webkit-box-orient: vertical!important; 
