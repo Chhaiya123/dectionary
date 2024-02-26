@@ -103,7 +103,7 @@
                                 {{-- description french --}}
                                 <div class="col-md-12">
                                     <label for="des" class="form-label text-uppercase">Description <span class="text-light badge rounded-pill bg-primary">French</span></label>
-                                    <textarea class="form-control" name="description" id="des" placeholder="Input description" required style="width: 100%; height: 100px;">{{$dt->description}}</textarea>
+                                    <textarea class="form-control" name="description" id="des" placeholder="Input description" style="width: 100%; height: 100px;">{{$dt->description}}</textarea>
                                     @foreach($errors->get('description') as $error)
                                         <small class="text-danger">{{ $error }}</small>
                                     @endforeach
@@ -111,7 +111,7 @@
                                 {{-- description Khmer --}}
                                 <div class="col-md-12">
                                     <label for="des_km" class="form-label text-uppercase">Description <span class="text-light badge rounded-pill bg-danger">Khmer</span></label>
-                                    <textarea class="form-control" name="description_km" id="des_km" placeholder="Input description khmer" required style="width: 100%; height: 100px;">{{$dt->description_km}}</textarea>
+                                    <textarea class="form-control" name="description_km" id="des_km" placeholder="Input description khmer" style="width: 100%; height: 100px;">{{$dt->description_km}}</textarea>
                                     @foreach($errors->get('description') as $error)
                                         <small class="text-danger">{{ $error }}</small>
                                     @endforeach
@@ -119,7 +119,7 @@
                                 {{-- description English --}}
                                 <div class="col-md-12">
                                     <label for="des_en" class="form-label text-uppercase">Description <span class="text-light badge rounded-pill bg-success">English</span></label>
-                                    <textarea class="form-control" name="description_en" id="des_en" placeholder="Input description english" required style="width: 100%; height: 100px;">{{$dt->description_en}}</textarea>
+                                    <textarea class="form-control" name="description_en" id="des_en" placeholder="Input description english" style="width: 100%; height: 100px;">{{$dt->description_en}}</textarea>
                                     @foreach($errors->get('description') as $error)
                                         <small class="text-danger">{{ $error }}</small>
                                     @endforeach
