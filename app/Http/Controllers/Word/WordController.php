@@ -55,26 +55,27 @@ class WordController extends Controller
                     return $query->where('user_id', $user_id);
                 }),
             ],
-            'description' => 'required|max:255',
-            'description_km' => 'required|max:255',
-            'description_en' => 'required|max:255',
+            // 'description' => 'required|max:255',
+            // 'description_km' => 'required|max:255',
+            // 'description_en' => 'required|max:255',
             // other validation rules...
         ];
         $customMessages = [
             'word.required' => 'The word field is required.',
             'word.unique' => 'The word has already been taken.',
-            'description.required' => 'The description field is required.',
+            // 'description.null' => null,
             // custom messages km
             'word_km.required' => 'The word field is required.',
             'word_km.unique' => 'The word has already been taken.',
-            'description_km.required' => 'The description field is required.',
+            // 'description_km.required' => null,
             // custom messages en
             'word_en.required' => 'The word field is required.',
             'word_en.unique' => 'The word has already been taken.',
-            'description_en.required' => 'The description field is required.',
+            // 'description_en.required' => null,
             
         ];
         $request->validate($rules, $customMessages);
+        
            
         $data = new Word();
         $data->word= $request->word;
@@ -94,27 +95,27 @@ class WordController extends Controller
     public function update(Request $request,$id){
         $rules = [
             'word' => 'required|string|max:255',
-            'description' => 'required|max:255',
+            // 'description' => 'required|max:255',
             // other validation rules
             'word_km' => 'required|string|max:255',
-            'description_km' => 'required|max:255',
+            // 'description_km' => 'required|max:255',
             // other validation rules
             'word_en' => 'required|string|max:255',
-            'description_en' => 'required|max:255',
+            // 'description_en' => 'required|max:255',
             // other validation rules
         ];
         $customMessages = [
             'word.required' => 'The word field is required.',
             'word.unique' => 'The word has already been taken.',
-            'description.required' => 'The description field is required.',
+            // 'description.required' => 'The description field is required.',
             // other custom messages
             'word_km.required' => 'The word field is required.',
             'word_km.unique' => 'The word has already been taken.',
-            'description_km.required' => 'The description field is required.',
+            // 'description_km.required' => 'The description field is required.',
             // other custom messages
             'word_en.required' => 'The word field is required.',
             'word_en.unique' => 'The word has already been taken.',
-            'description_en.required' => 'The description field is required.',
+            // 'description_en.required' => 'The description field is required.',
             // other custom messages
         ];
        

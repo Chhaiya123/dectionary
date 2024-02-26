@@ -38,26 +38,26 @@
                         {{-- description frarnch --}}
                         <div class="col-md-12">
                             <label for="des" class="form-label">Description <span class="text-light badge rounded-pill bg-primary">French</span></label>
-                            <textarea class="form-control" name="description" id="des" placeholder="Input description" required style="width: 100%; height: 100px;"></textarea>
-                            @foreach($errors->get('description') as $error)
+                            <textarea class="form-control" name="description"  id="des" placeholder="Input description" style="width: 100%; height: 100px;"></textarea>
+                            {{-- @foreach($errors->get('description') as $error)
                                 <small class="text-danger">{{ $error }}</small>
-                            @endforeach
+                            @endforeach --}}
                         </div>
                         {{-- description khmer --}}
                         <div class="col-md-12">
                             <label for="des_km" class="form-label">Description <span class="text-light badge rounded-pill bg-danger">Khmer</span></label>
-                            <textarea class="form-control" name="description_km" id="des_km" placeholder="Input description khmer" required style="width: 100%; height: 100px;"></textarea>
-                            @foreach($errors->get('description_km') as $error)
+                            <textarea class="form-control" name="description_km"  id="des_km" placeholder="Input description khmer" style="width: 100%; height: 100px;"></textarea>
+                            {{-- @foreach($errors->get('description_km') as $error)
                                 <small class="text-danger">{{ $error }}</small>
-                            @endforeach
+                            @endforeach --}}
                         </div>
                         {{-- description english --}}
                         <div class="col-md-12">
                             <label for="des_en" class="form-label">Description <span class="text-light badge rounded-pill bg-success">English</span></label>
-                            <textarea class="form-control" name="description_en" id="des_en" placeholder="Input description english" required style="width: 100%; height: 100px;"></textarea>
-                            @foreach($errors->get('description') as $error)
+                            <textarea class="form-control" name="description_en"  id="des_en" placeholder="Input description english" style="width: 100%; height: 100px;"></textarea>
+                            {{-- @foreach($errors->get('description') as $error)
                                 <small class="text-danger">{{ $error }}</small>
-                            @endforeach
+                            @endforeach --}}
                         </div>
                         <div class="col-12">
                             <button class="btn btn-primary" type="submit">Submit form</button>
